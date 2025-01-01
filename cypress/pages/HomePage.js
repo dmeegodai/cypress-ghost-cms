@@ -1,21 +1,19 @@
 import "cypress-xpath";
+import { urls } from "../support/urls";
 
-Cypress.on('uncaught:exception', (err, runnable) => {
-    // Returning false here prevents Cypress from failing the test
-    return false;
-  });
 
 class HomePage {
-  // General structure
+
+// Locators of the Home Page
   selectors = {
-    header: "//header[contains(@class, 'main-header')]",
-    bodyContent: "//div[@class='layout-content container-fluid main-body-wrapper']",
-    footer: "//div[contains(text(), 'Explore and Shop')]",
+    header: "//header[contains(@class, 'header-area')]",
+    bodyContent: "//body[contains(@class, 'home page-template page-template-page-home page-template-page')]",
+    footer: "//footer[@class='footer-style-two']",
   };
 
   // Method to visit the homepage
   visit() {
-    cy.visit("https://www.dialog.lk/");
+    cy.visit(urls.homepage);
   }
 
   // Methods to validate the general structure

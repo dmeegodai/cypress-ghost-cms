@@ -1,3 +1,3 @@
 export class urls {
-   static homepage = "https://www.hutch.lk/";
+   static homepage = "https://shop.dilmahtea.com/";
 }

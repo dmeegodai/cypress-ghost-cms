@@ -6,9 +6,11 @@ class HomePage {
 
 // Locators of the Home Page
   selectors = {
-    header: "//header[contains(@class, 'header-area')]",
-    bodyContent: "//body[contains(@class, 'home page-template page-template-page-home page-template-page')]",
-    footer: "//footer[@class='footer-style-two']",
+    header: "#shopify-section-header",
+    bodyContent: "#shopify-section-1632757703d43adf55",
+    footer: ".footer_right",
+    gdprButton: ".ecom-accept-gdpr",
+    brandLogo: "//img[@class='header__logo']",
   };
 
   // Method to visit the homepage
@@ -18,15 +20,24 @@ class HomePage {
 
   // Methods to validate the general structure
   verifyHeader() {
-    cy.xpath(this.selectors.header).should("be.visible");
+    cy.get(this.selectors.header).should("be.visible");
   }
 
-  verifyBoadyContent() {
-    cy.xpath(this.selectors.bodyContent).should("be.visible");
+  verifyBodyContent() {
+    cy.get(this.selectors.bodyContent).should("be.visible");
   }
 
   verifyFooter() {
-    cy.xpath(this.selectors.footer).should("be.visible");
+    cy.get(this.selectors.footer).should("be.visible");
+  }
+
+  clickModelContentButton() {
+  
+    cy.get(this.selectors.gdprButton).click();
+  }
+
+  verifyBrandLogo() {
+    cy.xpath(this.selectors.brandLogo).should("be.visible");
   }
 }
 

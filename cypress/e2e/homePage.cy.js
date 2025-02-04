@@ -8,13 +8,25 @@ describe("Dilmah Page Test - General Structure Validation", () => {
     HomePage.clickModelContentButton();
   });
 
-  //  Test case 1: Verify the header is visible
+  //  Test case 1: Verify the main element is visible
   it("Should verify the home page header, body and footer", () => {
     HomePage.verifyHeader();
     HomePage.verifyBodyContent();
     HomePage.verifyFooter();
-     // Final assertion: Verify the brand logo is visible 
-     HomePage.verifyBrandLogo();
+    // Final assertion: Verify the brand logo is visible
+    HomePage.verifyBrandLogo();
   });
+});
 
+describe("Dilmah Landing Page - Validation Tests", () => {
+  beforeEach(() => {
+    Cypress.on("uncaught:exception", (err, runnable) => {
+      return false; 
+    });
+    HomePage.visit();
+    HomePage.clickModelContentButton();
+  });
+  it("Should verify the newsletter banner on navigator menu", () => {
+    HomePage.clickNewsletterTexts();
+  });
 });

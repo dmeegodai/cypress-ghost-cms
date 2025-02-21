@@ -12,6 +12,9 @@ class HomePage {
     newsletterTextOne: "#ecom_free_shipping_margin",
     newsletterTextTwo:
       "//div[@class='announcement-bar__content']/a[@class='color-inherit' and contains(text(), 'Subscribe to our Newsletter and get')]",
+    searchBoxPlaceholder: "//input[@placeholder='Search the tea world of Dilmah']",
+    searchIcon: ".icon-search",
+    searchButton: ".btn search-button btn-secondary btn-sm",
   };
 
   // Method to visit the homepage
@@ -52,6 +55,17 @@ class HomePage {
         });
       }
     });
+  }
+
+  // Methods to validate the search feild
+  verifySearchPlaceholderText() {
+    cy.get(this.selectors.searchBoxPlaceholder).should("be.visible");
+  }
+  verifySerachIcon(){
+    cy.get(this.selectors.searchIcon).should("be.visible");
+  }
+  verifySearchButton(){
+    cy.get(this.selectors.searchButton).should("exist");
   }
 }
 

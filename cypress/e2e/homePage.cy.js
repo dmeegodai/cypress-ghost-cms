@@ -30,3 +30,18 @@ describe("Dilmah Landing Page - Validation Tests", () => {
     HomePage.clickNewsletterTexts();
   });
 });
+
+describe("Dilmah Top Header -Validation Tests", () => {
+  beforeEach(() => {
+    Cypress.on("uncaught:exception", (err, runnable) => {
+      return false; 
+    });
+    HomePage.visit();
+  });
+  it("Should verify the search section of the header", ()=>{
+    HomePage.verifySearchPlaceholderText();
+    HomePage.verifySerachIcon();
+    HomePage.verifySearchButton();
+  })
+
+});

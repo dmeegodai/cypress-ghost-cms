@@ -12,13 +12,19 @@ class HomePage {
     newsletterTextOne: "#ecom_free_shipping_margin",
     newsletterTextTwo:
       "//div[@class='announcement-bar__content']/a[@class='color-inherit' and contains(text(), 'Subscribe to our Newsletter and get')]",
-    searchBoxPlaceholder: "//input[@placeholder='Search the tea world of Dilmah']",
+    searchBoxPlaceholder:
+      "//input[@placeholder='Search the tea world of Dilmah']",
     searchIcon: ".icon-search",
-    searchButton: ".btn search-button btn-secondary btn-sm",
+    searchButton: ".input-group-append",
   };
 
+  // Method to visit the shop-homepage
+  shopVisit() {
+    cy.visit(urls.shophomepage);
+  }
+
   // Method to visit the homepage
-  visit() {
+  homeVisit() {
     cy.visit(urls.homepage);
   }
 
@@ -59,13 +65,19 @@ class HomePage {
 
   // Methods to validate the search feild
   verifySearchPlaceholderText() {
-    cy.get(this.selectors.searchBoxPlaceholder).should("be.visible");
+    cy.xpath(this.selectors.searchBoxPlaceholder).should("be.visible");
   }
-  verifySerachIcon(){
+  verifySerachIcon() {
     cy.get(this.selectors.searchIcon).should("be.visible");
   }
-  verifySearchButton(){
+  verifySearchButton() {
     cy.get(this.selectors.searchButton).should("exist");
+  }
+  enterSearchText(searchText) {
+    cy.xpath(this.selectors.searchBoxPlaceholder).type(searchText);
+  }
+  searchButtonAction() {
+    cy.get(this.selectors.searchButton).click();
   }
 }
 

@@ -16,6 +16,7 @@ class HomePage {
       "//input[@placeholder='Search the tea world of Dilmah']",
     searchIcon: ".icon-search",
     searchButton: ".input-group-append",
+    closeCookie: ".close-cookie",
   };
 
   // Method to visit the shop-homepage
@@ -78,6 +79,12 @@ class HomePage {
   }
   searchButtonAction() {
     cy.get(this.selectors.searchButton).click();
+  }
+  closeCookiePopupVisibility() {
+    cy.get(this.selectors.closeCookie, {timeout: 10000}).should("be.visible");
+  }
+  closeCookiePopup() {
+    cy.get(this.selectors.closeCookie).click();
   }
 }
 

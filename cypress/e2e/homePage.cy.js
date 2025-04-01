@@ -46,5 +46,7 @@ describe("Dilmah Top Header -Validation Tests", () => {
   it("Should verify the search action of the field", () => {
     HomePage.enterSearchText("Tea");
     HomePage.searchButtonAction();
+    HomePage.closeCookiePopupVisibility();
+    HomePage.closeCookiePopup();
   });
 });

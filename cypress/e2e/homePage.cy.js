@@ -49,4 +49,11 @@ describe("Dilmah Top Header -Validation Tests", () => {
     HomePage.closeCookiePopupVisibility();
     HomePage.closeCookiePopup();
   });
+  it("Should verify the Dilmah Online button", () => {
+    HomePage.verifyDilmahOnlineButtonPresent();
+  })
 });
+
+
+
+

@@ -18,6 +18,7 @@ class HomePage {
     searchButton: ".input-group-append",
     closeCookie: ".close-cookie",
     dilmahOnlineButton: "//div[@id='nav-collapse1']/ul/li[2]//a[text()='Dilmah Online']",
+    careerButton: "//div[@id='nav-collapse1']/ul/li[3]//a[text()='Careers']",
   };
 
   // Method to visit the shop-homepage
@@ -92,8 +93,17 @@ class HomePage {
  verifyDilmahOnlineButtonPresent() {
   cy.xpath(this.selectors.dilmahOnlineButton).should("be.visible").and("not.be.disabled");
  }
+ verifyDilmahOnlineButtonClick() {
+  cy.xpath(this.selectors.dilmahOnlineButton).should("not.be.disabled").click();
+ }
 
-
+  // Methods to validate the Dilmah Careers Button
+  verifyDilmahCareersButtonPresent() {
+    cy.xpath(this.selectors.careerButton).should("be.visible").and("not.be.disabled");
+   }
+   verifyDilmahCareersButtonClick() {
+    cy.xpath(this.selectors.careerButton).should("not.be.disabled").click();
+   }
 
 
 

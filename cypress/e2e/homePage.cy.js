@@ -52,11 +52,16 @@ describe("Dilmah Top Header -Validation Tests", () => {
   it("Should verify the Dilmah Online button", () => {
     HomePage.verifyDilmahOnlineButtonPresent(); 
     HomePage.verifyDilmahOnlineButtonClick();
-  })
+  });
   it("Should verify the Dilmah Careers button", () => {
     HomePage.verifyDilmahCareersButtonPresent(); 
     HomePage.verifyDilmahCareersButtonClick();
-  })
+  });
+  it("Should verify the Shop Online button", () => {
+    HomePage.verifyDilmahShopOnlineButtonPresent();
+    HomePage.verifyDilmahShopOnlineButtonClick();
+  });
+
 });
 
 

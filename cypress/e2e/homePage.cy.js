@@ -10,6 +10,10 @@ describe("Dilmah Page Test - General Structure Validation", () => {
 
   //  Test case 1: Verify the main element is visible
   it("Should verify the home page header, body and footer", () => {
+    cy.eyesOpen({
+      appName: 'Dilmah Website',
+      testName: 'Home Page Layout Validation'
+    });
     HomePage.verifyHeader();
     HomePage.verifyBodyContent();
     HomePage.verifyFooter();

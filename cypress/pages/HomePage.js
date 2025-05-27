@@ -35,7 +35,9 @@ class HomePage {
 
   // Methods to validate the general structure
   verifyHeader() {
-    cy.get(this.selectors.header).should("be.visible");
+    cy.get(this.selectors.header).should("be.visible").then($el => {
+      cy.eyesCheckElement($el); 
+    });;
   }
 
   verifyBodyContent() {
